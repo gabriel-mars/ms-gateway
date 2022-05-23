@@ -16,6 +16,6 @@ RUN apk add --update tzdata
 ENV TZ=America/Sao_Paulo
 
 # Run the jar file
-ENTRYPOINT java -XX:MinHeapFreeRatio=50 -XX:+UseContainerSupport -XX:+UseParallelGC -XX:MaxRAMPercentage=80.0 -XX:ParallelGCThreads=4 -XX:MaxGCPauseMillis=100 -DAPPLICATION_NAME=${APPLICATION_NAME} -DSERVER_PORT=${SERVER_PORT} -DEUREKA_BASE_URL=${EUREKA_BASE_URL} -jar api-gateway.jar
+ENTRYPOINT java -XX:MinHeapFreeRatio=50 -XX:+UseContainerSupport -XX:+UseParallelGC -XX:MaxRAMPercentage=80.0 -XX:ParallelGCThreads=4 -XX:MaxGCPauseMillis=100 -DAPPLICATION_NAME=${APPLICATION_NAME} -DSERVER_PORT=${SERVER_PORT} -DEUREKA_BASE_URL=${EUREKA_BASE_URL} -DASSEMBLY_MS_NAME=${ASSEMBLY_MS_NAME} -DVOTE_MS_NAME=${VOTE_MS_NAME} -jar api-gateway.jar
 
 EXPOSE ${SERVER_PORT}
